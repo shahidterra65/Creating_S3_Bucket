@@ -40,6 +40,9 @@ jobs:
 
     - name: applying terraform
       run: terraform apply --auto-approve
+    
+    - name: destroy aws resource
+      run: terraform destroy --auto-approve 
 
     # - name: cleaup process
     #   run: rm tfplan
