@@ -1,4 +1,4 @@
-name: terraform s3 bucket
+name: terraform s3 bucket practice3
 
 on:
   push:
