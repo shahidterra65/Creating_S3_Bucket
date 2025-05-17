@@ -8,9 +8,9 @@ variable "Size" {
 
 }
 variable "Name" {
-default = "SonarQube"
+default = "SonarQubeServer"
 }
 variable "counts" {
- default = 2
+ default = 1
 
 }
