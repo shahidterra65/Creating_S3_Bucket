@@ -5,8 +5,7 @@ bucket = "my-unique-bucket-namethatwearedoingnewpractice33"
 resource "aws_instance" "web" {
   ami           = var.os
   instance_type = var.Size
-  count = var.counts
-  tags = {
+   tags = {
     Name = var.Name
   }
 }
