@@ -1,3 +1,3 @@
 resource "aws_s3_bucket" "mybucket" { 
-bucket = "my-unique-bucket-namethatwearedoing" 
+bucket = "my-unique-bucket-namethatwearedoingnew1" 
 } 

@@ -39,5 +39,5 @@ jobs:
       run: terraform apply --auto-approve
 
     - name: cleaup process
-      run: rm tfplans
+      run: rm tfplan
 
