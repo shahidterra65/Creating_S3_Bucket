@@ -1,0 +1,42 @@
+name: terraform s3 bucket
+
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+  terraform:
+    runs-on: ubuntu-latest
+    environment: aws
+
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v3
+
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    - name: setup terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1.5.5
+
+    - name: initialize terraform
+      run: terraform init
+
+    - name: Validating terraform
+      run: terraform validate
+
+    - name: planning terraform
+      run: terraform plan
+
+    - name: applying terraform
+      run: terraform apply --auto-approve
+
+    - name: cleaup process
+      run: rm tfplans
+
